@@ -1,0 +1,47 @@
+{
+    "frame_idx": 100000,
+    "config": {
+        "env_name": "ALE/Krull-v5",
+        "seed": 2024,
+        "total_frames": 100000,
+        "memory_size": 100000,
+        "batch_size": 32,
+        "target_update": 2000,
+        "learning_rate": 0.0001,
+        "adam_eps": 0.00015,
+        "gamma": 0.99,
+        "min_replay_history": 1600,
+        "max_grad_norm": 10.0,
+        "eps_decay_steps": 20000,
+        "double_dqn": true,
+        "dueling": false,
+        "n_step_learning": false,
+        "prioritized_replay": false,
+        "categorical_dqn": false,
+        "noisy_nets": false,
+        "n_step": 20,
+        "per_alpha": 0.5,
+        "per_beta_initial": 0.4,
+        "per_prior_eps": 1e-06,
+        "c51_v_min": -10.0,
+        "c51_v_max": 10.0,
+        "c51_atom_size": 51,
+        "noisy_std_init": 0.1,
+        "conv_layers": [
+            [
+                32,
+                5,
+                5
+            ],
+            [
+                64,
+                5,
+                5
+            ]
+        ],
+        "hidden_dim": 256,
+        "obs_dtype": "uint8",
+        "normalize": true
+    },
+    "recent_avg_score": 594.0
+}
