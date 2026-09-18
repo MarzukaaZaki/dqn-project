@@ -40,13 +40,13 @@ Below is the complete formal breakdown of how each game is modelled as a **Marko
 
 * **State Space $\mathcal{S}$:**
   Visual positioning of the chicken (player), the opponent chicken, and 10 horizontal traffic lanes where cars travel at different fixed velocities (some left-to-right, some right-to-left).
-* **Action Space $\mathcal{A}$ (3 Discrete Actions):**
+* **Action Space $\mathcal{A}$ (3 Discrete Actions):**\
   $$\mathcal{A} = \{\text{NOOP (0)}, \, \text{UP (1)}, \, \text{DOWN (2)}\}$$
-* **Transition Dynamics $\mathcal{P}(s' \mid s, a)$:**
+* **Transition Dynamics $\mathcal{P}(s' \mid s, a)$:**\
   * Action `UP` increments vertical position; `DOWN` decrements it.
   * Car collision does *not* lose a life; it induces a negative deterministic displacement (pushes the chicken backwards down several lanes).
   * Crossing the top lane teleports the chicken back to the bottom lane.
-* **Reward Function $\mathcal{R}$:**
+* **Reward Function $\mathcal{R}$:**\
   $$\mathcal{R}(s, a, s') = \begin{cases} +1.0 & \text{if chicken crosses the top highway boundary} \\ 0.0 & \text{otherwise} \end{cases}$$
 * **MDP Characteristic:** **Severe reward sparsity.** The agent must execute roughly 30–40 coordinated `UP` decisions while dodging traffic before receiving a single non-zero reward. Without intermediate rewards, early Q-values remain near zero.
 
